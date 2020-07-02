@@ -29,3 +29,7 @@ $mpdf->WriteHTML($data);
 
 // Output to browser
 $mpdf->Output('myfile.pdf', 'D');
+
+function rollstats() {
+    echo rand(1,10)
+}
