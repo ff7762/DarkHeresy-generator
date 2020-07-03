@@ -14,8 +14,6 @@ function rollWorld() {
     console.log(world);
 }
 
-
-
 function rollStats() {
     var d10 = document.querySelectorAll(".d101,.d102");
     for (var i = 0; i < d10.length; ++i) {
