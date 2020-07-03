@@ -1,8 +1,23 @@
 document.getElementById("rerollButton").addEventListener("click", rollStats);
 document.getElementById("rerollButton").addEventListener("click", total);
+document.getElementById("randomworld").addEventListener("click", rollWorld);
+
+function rollWorld() {
+    var worlds = [
+                  ['Feral', 20, 20, 25, 25, 20, 20, 20, 15, 15, '9+d5'],
+                  ['Hive', 20, 20, 20, 15, 20, 20, 20, 20, 25, '8+d5'],
+                  ['Imperial', 20, 20, 20, 20, 20, 20, 20, 20, '8+d5'],
+                  ['Void', 20, 20, 15, 20, 20, 20, 20, 25, 20, '6+d5'],
+                  ['Forge', 15, 20, 20, 20, 20, 25, 20, 20, 20, '7+d5']
+                ];
+    var world = worlds[Math.floor(Math.random() * worlds.length)];
+    console.log(world);
+}
+
+
 
 function rollStats() {
-    var d10 = document.querySelectorAll(".class1,.class2");
+    var d10 = document.querySelectorAll(".d101,.d102");
     for (var i = 0; i < d10.length; ++i) {
         var result = Math.floor(Math.random()*10) + 1;
         var item = d10[i];
