@@ -18,13 +18,8 @@
 
                 <textarea name="message" placeholder="Your Message" class="form-control" required></textarea>
 
-                <select name="hw" onchange="chooseworld(this.form.hw,0);">
+                <select name="hw" id='world-dropdown'>
                 	<option value="-1" selected="selected">Select a World</option>
-                	<option value="0">Feral World</option>
-                	<option value="1">Hive World</option>
-                	<option value="2">Imperial World</option>
-                	<option value="3">Void Born</option>
-                	<option value="4">Forge World</option>
                 </select>
 
                 <button id="randomworld" type="button">random</button>
