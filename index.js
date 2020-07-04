@@ -1,4 +1,4 @@
-var worlds = [
+const worlds = [
               ['Feral', 20, 20, 25, 25, 20, 20, 20, 15, 15, '9+d5'],
               ['Hive', 20, 20, 20, 15, 20, 20, 20, 20, 25, '8+d5'],
               ['Imperial', 20, 20, 20, 20, 20, 20, 20, 20, '8+d5'],
@@ -6,10 +6,10 @@ var worlds = [
               ['Forge', 15, 20, 20, 20, 20, 25, 20, 20, 20, '7+d5']
              ];
 
-function rollWorld(worlds) {
-    var world = worlds[Math.floor(Math.random() * worlds.length)];
-    console.log(world)
-}
+ document.getElementById("randomworld").addEventListener("click", function randomworld() {
+     var world = worlds[Math.floor(Math.random() * worlds.length)];
+     console.log(world);
+ });
 
 function populate_world_dropdown(worlds) {
     console.log('epic')
@@ -20,10 +20,8 @@ function populate_world_dropdown(worlds) {
         dropdown_element.textContent = option;
         dropdown_element.value = option;
         select.appendChild(dropdown_element);
-        console.log(option);
     }
 }
-
 
 function rollStats() {
     var d10 = document.querySelectorAll(".d101,.d102");
@@ -56,5 +54,4 @@ function total() {
 
 document.getElementById("rerollButton").addEventListener("click", rollStats);
 document.getElementById("rerollButton").addEventListener("click", total);
-document.getElementById("randomworld").addEventListener("click", rollWorld(this, worlds));
 window.onload = populate_world_dropdown(worlds);
