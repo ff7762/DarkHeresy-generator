@@ -8,11 +8,11 @@ const worlds = [
 
  document.getElementById("randomworld").addEventListener("click", function randomworld() {
      var world = worlds[Math.floor(Math.random() * worlds.length)];
-     console.log(world);
+     var table = document.getElementById("mytable");
  });
 
+
 function populate_world_dropdown(worlds) {
-    console.log('epic')
     var select = document.getElementById("world-dropdown");
     for(var i = 0; i < worlds.length; i++) {
         var option = worlds[i][0];
