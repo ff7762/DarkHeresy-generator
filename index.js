@@ -31,6 +31,7 @@ function random() {
 
 function base(world) {
     var world = worlds[Math.floor(Math.random() * worlds.length)];
+    homeworldtraits(world);
     var table = document.getElementById("mytable");
     document.getElementById("world-dropdown").innerHTML='<option value="1">' + world[0] + '</option>';
     populate_world_dropdown(worlds);
@@ -65,7 +66,6 @@ document.getElementById("world-dropdown").addEventListener("change", function wo
     var input = getworld_dropdown();
     var world_object = isItemInArray(worlds, input);
     base(world_object);
-    homeworldtraits(world_object);
 });
 
 function populate_world_dropdown(worlds) {
