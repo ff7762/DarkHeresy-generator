@@ -25,11 +25,12 @@
 
                 <button id="randomworld" type="button">random</button>
 
-                <div id="traits" class="row mb-2">Homeworld Traits:</div>
-                <div id="skills" class="row mb-2">Homeworld Skills:</div>
-                <div id="talents" class="row mb-2">Homeworld Talents:</div>
+                <div id="traits" class="text-left">Homeworld Traits:</div>
+                <div id="skills" class="text-left">Homeworld Skills:</div>
+                <div id="talents" class="text-left">Homeworld Talents:</div>
 
                 <div class="row mb-4"></div>
+                <hr/>
 
                 <button id="rerollButton" type="button">Reroll</button>
 
@@ -200,6 +201,19 @@
                         <td><input type="text" name="wsroll1" size="2" readonly="readonly" value="0"></td>
                     </tr>
                 </table>
+
+                <hr/>
+
+                <div class="text-left">Determine Career path</div>
+
+                <div class="text-left">
+                    <div class="text-left">Career:
+                    <select name="hw" id='world-dropdown'>
+                    	<option value="-1" selected="selected">Select Career</option>
+                    </select>
+                    </div>
+                </div>
+
 
                 <button type="submit" class="btn btn-success btn-lg btn-block">Create CharacterSheet</button>
         </form>
