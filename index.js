@@ -1,14 +1,26 @@
 const worlds = [
-              ['Feral', 20, 20, 25, 25, 20, 20, 20, 15, 15, '9+d5'],
-              ['Hive', 20, 20, 20, 15, 20, 20, 20, 20, 25, '8+d5'],
-              ['Imperial', 20, 20, 20, 20, 20, 20, 20, 20, '8+d5'],
-              ['Void', 20, 20, 15, 20, 20, 20, 20, 25, 20, '6+d5'],
-              ['Forge', 15, 20, 20, 20, 20, 25, 20, 20, 20, '7+d5']
+              ['Feral', 20, 20, 25, 25, 20, 20, 20, 15, 15, '9+d5', 0, 0, 0, 0],
+              ['Hive', 20, 20, 20, 15, 20, 20, 20, 20, 25, '8+d5', 0, 0, 0, 0],
+              ['Imperial', 20, 20, 20, 20, 20, 20, 20, 20, 20, '8+d5', 0, 0, 0, 0],
+              ['Void', 20, 20, 15, 20, 20, 20, 20, 25, 20, '6+d5', 0, 0, 0, 0],
+              ['Forge', 15, 20, 20, 20, 20, 25, 20, 20, 20, '7+d5', 0, 0, 0, 0]
              ];
 
  document.getElementById("randomworld").addEventListener("click", function randomworld() {
      var world = worlds[Math.floor(Math.random() * worlds.length)];
      var table = document.getElementById("mytable");
+     console.log(world)
+     for (var i = 1, row; row = table.rows[i]; i++) {
+        var cell = 0;
+        var replace = world[i]
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            var pointer = parseInt(row.cells[j].innerHTML);
+            cell += 1;
+            if (cell == 4) {
+                row.cells[j].innerHTML = replace;
+            }
+        }
+     }
  });
 
 
@@ -39,7 +51,7 @@ function total() {
        var cell = 0;
        for (var j = 0, col; col = row.cells[j]; j++) {
            var pointer = parseInt(row.cells[j].innerHTML);
-           cell += 1
+           cell += 1;
 
            if (cell == 9) {
                row.cells[j].innerHTML = totalcount;
