@@ -6,10 +6,6 @@ const worlds = [
               ['Forge', 15, 20, 20, 20, 20, 25, 20, 20, 20, '7+d5', 0, 0, 0, 0]
              ];
 
-var e = ['Forge']
-console.log(e)
-
-
 function isItemInArray(array, item) {
     for (var i = 0; i < array.length; i++) {
         var z = 0;
@@ -17,15 +13,12 @@ function isItemInArray(array, item) {
             found = worlds[i];
             console.log(found);
             return(found);
-            // Found it
         }
     }
-    return false;   // Not found
+    return false;
 }
 
-console.log("Is it in there? [1, 2]", isItemInArray(worlds, e));
-
-document.getElementById("randomworld").addEventListener("click", function world_select() {
+document.getElementById("randomworld").addEventListener("click", function world_random() {
     var input = random();
     base(input)
 });
@@ -52,11 +45,18 @@ function base(world) {
      total()
 }
 
-function getworld_dropdown(worlds) {
+function getworld_dropdown() {
     var select = document.getElementById("world-dropdown");
     var currentOption = select.options[select.selectedIndex].value;
-    console.log(currentOption);
+    return(currentOption);
 };
+
+document.getElementById("world-dropdown").addEventListener("change", function world_select(){
+    var input = getworld_dropdown();
+    console.log(input);
+    var f = isItemInArray(worlds, input);
+    base(f);
+});
 
 function populate_world_dropdown(worlds) {
     var select = document.getElementById("world-dropdown");
@@ -98,7 +98,6 @@ function total() {
     }
 }
 
-document.getElementById("world-dropdown").addEventListener("change", getworld_dropdown);
 document.getElementById("rerollButton").addEventListener("click", rollStats);
 document.getElementById("rerollButton").addEventListener("click", total);
 window.onload = populate_world_dropdown(worlds);
