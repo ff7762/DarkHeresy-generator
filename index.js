@@ -11,7 +11,6 @@ function isItemInArray(array, item) {
         var z = 0;
         if (array[i][z] == item[z] && array[i][z] == item[z]) {
             found = worlds[i];
-            console.log(found);
             return(found);
         }
     }
@@ -25,15 +24,17 @@ document.getElementById("randomworld").addEventListener("click", function world_
 
 function random() {
     var world = worlds[Math.floor(Math.random() * worlds.length)];
-    return world
+    return world;
 }
 
 function base(world) {
     var world = worlds[Math.floor(Math.random() * worlds.length)];
     var table = document.getElementById("mytable");
+    document.getElementById("world-dropdown").innerHTML='<option value="1">' + world[0] + '</option>';
+    populate_world_dropdown(worlds)
     for (var i = 1, row; row = table.rows[i]; i++) {
         var cell = 0;
-        var replace = world[i]
+        var replace = world[i];
         for (var j = 0, col; col = row.cells[j]; j++) {
             var pointer = parseInt(row.cells[j].innerHTML);
             cell += 1;
@@ -42,7 +43,7 @@ function base(world) {
             }
         }
     }
-     total()
+    total()
 }
 
 function getworld_dropdown() {
@@ -51,11 +52,10 @@ function getworld_dropdown() {
     return(currentOption);
 };
 
-document.getElementById("world-dropdown").addEventListener("change", function world_select(){
+document.getElementById("world-dropdown").addEventListener("change", function world_select() {
     var input = getworld_dropdown();
-    console.log(input);
-    var f = isItemInArray(worlds, input);
-    base(f);
+    var world_object = isItemInArray(worlds, input);
+    base(world_object);
 });
 
 function populate_world_dropdown(worlds) {
