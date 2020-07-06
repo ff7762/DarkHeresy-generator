@@ -9,7 +9,6 @@ const worlds = [
  document.getElementById("randomworld").addEventListener("click", function randomworld() {
      var world = worlds[Math.floor(Math.random() * worlds.length)];
      var table = document.getElementById("mytable");
-     console.log(world)
      for (var i = 1, row; row = table.rows[i]; i++) {
         var cell = 0;
         var replace = world[i]
@@ -22,8 +21,14 @@ const worlds = [
         }
      }
      total()
+     getworld_dropdown()
  });
 
+function getworld_dropdown() {
+    var select = document.getElementById("world-dropdown");
+    var currentOption = select.options[select.selectedIndex].value;
+    console.log(currentOption);
+};
 
 function populate_world_dropdown(worlds) {
     var select = document.getElementById("world-dropdown");
@@ -65,6 +70,7 @@ function total() {
     }
 }
 
+document.getElementById("world-dropdown").addEventListener("change", getworld_dropdown);
 document.getElementById("rerollButton").addEventListener("click", rollStats);
 document.getElementById("rerollButton").addEventListener("click", total);
 window.onload = populate_world_dropdown(worlds);
