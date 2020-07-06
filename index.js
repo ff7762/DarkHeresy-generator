@@ -6,10 +6,39 @@ const worlds = [
               ['Forge', 15, 20, 20, 20, 20, 25, 20, 20, 20, '7+d5', 0, 0, 0, 0]
              ];
 
- document.getElementById("randomworld").addEventListener("click", function randomworld() {
-     var world = worlds[Math.floor(Math.random() * worlds.length)];
-     var table = document.getElementById("mytable");
-     for (var i = 1, row; row = table.rows[i]; i++) {
+var e = ['Forge']
+console.log(e)
+
+
+function isItemInArray(array, item) {
+    for (var i = 0; i < array.length; i++) {
+        var z = 0;
+        if (array[i][z] == item[z] && array[i][z] == item[z]) {
+            found = worlds[i];
+            console.log(found);
+            return(found);
+            // Found it
+        }
+    }
+    return false;   // Not found
+}
+
+console.log("Is it in there? [1, 2]", isItemInArray(worlds, e));
+
+document.getElementById("randomworld").addEventListener("click", function world_select() {
+    var input = random();
+    base(input)
+});
+
+function random() {
+    var world = worlds[Math.floor(Math.random() * worlds.length)];
+    return world
+}
+
+function base(world) {
+    var world = worlds[Math.floor(Math.random() * worlds.length)];
+    var table = document.getElementById("mytable");
+    for (var i = 1, row; row = table.rows[i]; i++) {
         var cell = 0;
         var replace = world[i]
         for (var j = 0, col; col = row.cells[j]; j++) {
@@ -19,12 +48,11 @@ const worlds = [
                 row.cells[j].innerHTML = replace;
             }
         }
-     }
+    }
      total()
-     getworld_dropdown()
- });
+}
 
-function getworld_dropdown() {
+function getworld_dropdown(worlds) {
     var select = document.getElementById("world-dropdown");
     var currentOption = select.options[select.selectedIndex].value;
     console.log(currentOption);
