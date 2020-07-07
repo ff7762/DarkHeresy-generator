@@ -1,10 +1,25 @@
 const worlds = [
-              ['Feral', 20, 20, 25, 25, 20, 20, 20, 15, 15, '9+d5', 0, 0, 0, 0, "Iron Stomach, Primitive, Rite of Passage, Wilderness Savvy", "Speak Language (Tribal Dialect) (Int); Navigation (Surface) (Int) (Wild. Sav.), Survival (Int) (Wild. Sav.), and Tracking (Int) (Wild. Sav.) as Basic Skills", "None"],
-              ['Hive', 20, 20, 20, 15, 20, 20, 20, 20, 25, '8+d5', 0, 0, 0, 0, "Accustomed to Crowds, Caves of Steel, Hivebound, Wary", "Speak Language (Hive Dialect) (Int); Tech-Use (Int) (Caves of Steel) as Basic Skill", "None"],
-              ['Imperial', 20, 20, 20, 20, 20, 20, 20, 20, 20, '8+d5', 0, 0, 0, 0, "Blessed Ignorance, Hagiography, Litugical Familiarity, Superior Origins", "Common Lore (Imperial Creed) (Int) (Hagi.), Common Lore (Imperium) (Int) (Hagi.), Common Lore (War) (Int) (Hagi.), Literacy (Int) (Lit. Fam.), Speak Language (High Gothic) (Int) (Lit. Fam.) as Basic Skills", "None"],
-              ['Void', 20, 20, 15, 20, 20, 20, 20, 25, 20, '6+d5', 0, 0, 0, 0, "Charmed, Ill-Omened, Shipwise, Void Accustomed", "Speak Language (Ship Dialect) (Int); Navigation (Stellar) (Int) (Shipwise), Pilot (Starcraft) (Ag) (Shipwise) as Basic Skills", "None"],
-              ['Forge', 15, 20, 20, 20, 20, 25, 20, 20, 20, '7+d5', 0, 0, 0, 0, "Fit for Purpose, Stranger to the Cult, Credo Omnissiah", "Common Lore (Tech) (Int) and Common Lore (Machine Cult) (Int) as Basic Skills", "Technical Knock (Credo Omnissiah)"]
-             ];
+                   ['Feral', 20, 20, 25, 25, 20, 20, 20, 15, 15, '9+d5', 0, 0, 0, 0, "Iron Stomach, Primitive, Rite of Passage, Wilderness Savvy", "Speak Language (Tribal Dialect) (Int); Navigation (Surface) (Int) (Wild. Sav.), Survival (Int) (Wild. Sav.), and Tracking (Int) (Wild. Sav.) as Basic Skills", "None"],
+                   ['Hive', 20, 20, 20, 15, 20, 20, 20, 20, 25, '8+d5', 0, 0, 0, 0, "Accustomed to Crowds, Caves of Steel, Hivebound, Wary", "Speak Language (Hive Dialect) (Int); Tech-Use (Int) (Caves of Steel) as Basic Skill", "None"],
+                   ['Imperial', 20, 20, 20, 20, 20, 20, 20, 20, 20, '8+d5', 0, 0, 0, 0, "Blessed Ignorance, Hagiography, Litugical Familiarity, Superior Origins", "Common Lore (Imperial Creed) (Int) (Hagi.), Common Lore (Imperium) (Int) (Hagi.), Common Lore (War) (Int) (Hagi.), Literacy (Int) (Lit. Fam.), Speak Language (High Gothic) (Int) (Lit. Fam.) as Basic Skills", "None"],
+                   ['Void', 20, 20, 15, 20, 20, 20, 20, 25, 20, '6+d5', 0, 0, 0, 0, "Charmed, Ill-Omened, Shipwise, Void Accustomed", "Speak Language (Ship Dialect) (Int); Navigation (Stellar) (Int) (Shipwise), Pilot (Starcraft) (Ag) (Shipwise) as Basic Skills", "None"],
+                   ['Forge', 15, 20, 20, 20, 20, 25, 20, 20, 20, '7+d5', 0, 0, 0, 0, "Fit for Purpose, Stranger to the Cult, Credo Omnissiah", "Common Lore (Tech) (Int) and Common Lore (Machine Cult) (Int) as Basic Skills", "Technical Knock (Credo Omnissiah)"]
+               ];
+
+const careers = [
+                    [
+                        ['Assassin'],
+                        ['are gamers'],
+                    ],
+                    ['Assassin'],
+                    ['Cleric'],
+                    ['Guardsman'],
+                    ['Imperial Psyker'],
+                    ['Scum'],
+                    ['Tech-Priest'],
+                ];
+
+console.log(careers)
 
 function isItemInArray(array, item) {
     for (var i = 0; i < array.length; i++) {
