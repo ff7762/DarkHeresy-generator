@@ -9,7 +9,9 @@ const worlds = [
 const careers = [
                     [
                         ['Assassin'],
-                        ['are gamers'],
+                        ['Speak Language (Low Gothic) (Int), Awareness (Per), Dodge (Ag)'],
+                        ['Melee Weapons Training (Primitive), Basic Weapons Training (SP), Pistol Training (SP)'],
+                        ['Sword, knife, 3 doses of stimm, charge (corpse hair), black bodyglove (Common Quality Clothing)']
                     ],
                     ['Assassin'],
                     ['Cleric'],
@@ -63,7 +65,6 @@ function base(world) {
     }
     total();
 }
-
 
 function homeworldtraits(world) {
     document.getElementById("traits").innerHTML = "Homeworld Traits: "+ world[15];
