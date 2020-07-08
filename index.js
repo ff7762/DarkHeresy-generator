@@ -53,7 +53,7 @@ function base(world) {
     homeworldtraits(world);
     var table = document.getElementById("mytable");
     document.getElementById("world-dropdown").innerHTML='<option value="1">' + world[0] + '</option>';
-    populate_world_dropdown(worlds);
+    populate_dropdown(worlds, 'world-dropdown')
     for (var i = 1, row; row = table.rows[i]; i++) {
         var cell = 0;
         var replace = world[i];
