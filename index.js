@@ -8,20 +8,22 @@ const worlds = [
 
 const careers = [
                     [
+                        ['Arbitrator'],
+                        ['Speak Language (Low Gothic) (Int), Literacy (Int), Common Lore (Adeptus Arbites) (Int), Common Lore (Imperium) (Int), Inquiry (Fel)'],
+                        ['Basic Weapons Training (SP), Melee Weapons Training (Primitive)', 'Quick Draw-OR-Rapid Reload'],
+                        ['shotgun and 12 shells, club, brass knuckles, knife, uniform (Good Quality Clothing), 3 doses of stimm, injector, Arbitrator ID, chrono,', 'pack of iho-sticks-OR-flask of amasec', 'chain coat-OR-flask vest-OR-meshvest']
+                    ],
+                    [
                         ['Assassin'],
                         ['Speak Language (Low Gothic) (Int), Awareness (Per), Dodge (Ag)'],
-                        ['Melee Weapons Training (Primitive), Basic Weapons Training (SP), Pistol Training (SP)'],
-                        ['Sword, knife, 3 doses of stimm, charge (corpse hair), black bodyglove (Common Quality Clothing)']
-                    ],
-                    ['Assassin'],
-                    ['Cleric'],
-                    ['Guardsman'],
-                    ['Imperial Psyker'],
-                    ['Scum'],
-                    ['Tech-Priest'],
+                        ['Melee Weapons Training (Primitive), Basic Weapons Training (SP), Pistol Training (SP)', 'Ambidextrous-OR-Unremarkable', 'Thrown Weapons Training-OR-Pistol Training (Las)'],
+                        ['Sword, knife, 3 doses of stimm, charge (corpse hair), black bodyglove (Common Quality Clothing)', 'Shotgun and 12 shells-OR-Hunting rifle and 16 rounds-OR-autogun and 1 clip', 'compact las pistol and 1 charge pack-OR-10 throwing knives']
+                    ]
                 ];
 
-console.log(careers)
+e = careers[1][2]
+console.log(e)
+
 
 function isItemInArray(array, item) {
     for (var i = 0; i < array.length; i++) {
@@ -84,10 +86,10 @@ document.getElementById("world-dropdown").addEventListener("change", function wo
     base(world_object);
 });
 
-function populate_world_dropdown(worlds) {
-    var select = document.getElementById("world-dropdown");
-    for(var i = 0; i < worlds.length; i++) {
-        var option = worlds[i][0];
+function populate_dropdown(array, element) {
+    var select = document.getElementById(element);
+    for(var i = 0; i < array.length; i++) {
+        var option = array[i][0];
         var dropdown_element = document.createElement("option");
         dropdown_element.textContent = option;
         dropdown_element.value = option;
@@ -126,4 +128,5 @@ function total() {
 
 document.getElementById("rerollButton").addEventListener("click", rollStats);
 document.getElementById("rerollButton").addEventListener("click", total);
-window.onload = populate_world_dropdown(worlds);
+window.onload = populate_dropdown(worlds, 'world-dropdown');
+window.onload = populate_dropdown(careers, 'career-dropdown');
