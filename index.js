@@ -24,15 +24,15 @@ const careers = [
 e = careers[1][2]
 console.log(e)
 
-document.getElementById("career-dropdown").addEventListener("change", function world_select() {
-    var g = this.options[this.selectedIndex].text
-    career_data(careers, g)
+document.getElementById("career-dropdown").addEventListener("change", function career_select() {
+    var g = this.options[this.selectedIndex].text;
+    career_data(careers, g);
 });
 
 function career_data (careers, g) {
     for(var i = 0; i < careers.length; i++) {
-        console.log("Chicken Mayo")
-        console.log([careers][i])
+        var item = ([careers][i]);
+        console.log(item);
     }
     console.log(g)
 }
