@@ -21,9 +21,6 @@ const careers = [
                     ]
                 ];
 
-e = careers[1][2]
-console.log(e)
-
 document.getElementById("career-dropdown").addEventListener("change", function career_select() {
     var g = this.options[this.selectedIndex].text;
     career_data(careers, g);
@@ -35,8 +32,10 @@ function career_data (careers, g) {
         console.log(item);
         console.log("this is: " + item);
         document.getElementById("career-skills").innerHTML = "Skills: " + item;
+        /*
         document.getElementById("career-talents").innerHTML = "Talents: " + item;
         document.getElementById("career-gear").innerHTML = "Gear: " + item;
+        */
     }
 
 }
