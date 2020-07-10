@@ -30,11 +30,15 @@ document.getElementById("career-dropdown").addEventListener("change", function c
 });
 
 function career_data (careers, g) {
-    for(var i = 0; i < careers.length; i++) {
-        var item = ([careers][i]);
+    for(var i = 1; i < 4; i++) {
+        var item = careers[0][i];
         console.log(item);
+        console.log("this is: " + item);
+        document.getElementById("career-skills").innerHTML = "Skills: " + item;
+        document.getElementById("career-talents").innerHTML = "Talents: " + item;
+        document.getElementById("career-gear").innerHTML = "Gear: " + item;
     }
-    console.log(g)
+
 }
 
 function isItemInArray(array, item) {
