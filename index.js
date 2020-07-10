@@ -32,6 +32,7 @@ function career_data (careers, g) {
         console.log(item);
         console.log("this is: " + item);
         document.getElementById("career-skills").innerHTML = "Skills: " + item;
+        // TODO: Loop over html elements changing InnerHTML of each section with relevent data.
         /*
         document.getElementById("career-talents").innerHTML = "Talents: " + item;
         document.getElementById("career-gear").innerHTML = "Gear: " + item;
