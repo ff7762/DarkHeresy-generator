@@ -23,25 +23,33 @@ const careers = [
 
 document.getElementById("career-dropdown").addEventListener("change", function career_select() {
     var g = this.options[this.selectedIndex].text;
-    career_data(careers, g);
-    console.log(g)
+    var input = career_data(careers, g);
+    career_display(input);
+});
+
+document.getElementById("randomcareer").addEventListener("click", function career_select() {
+    i = careers.length;
+    var randomnumber = Math.floor(Math.random() * (i - 0)) + 0;
+    career_display(randomnumber);
 });
 
 function career_data (careers, g) {
     for(var i = 0; i <careers.length; i++) {
         var potentialmatch = careers[i][0]
-        console.log(potentialmatch);
         if (potentialmatch == g) {
             var data = i;
         }
     }
+    return data
+}
+
+function career_display(data) {
     var skill = careers[data][1];
     var item = careers[data][2];
     var gear = careers[data][3];
     document.getElementById("career-skills").innerHTML = "Skills: " + skill;
     document.getElementById("career-talents").innerHTML = "Talents: " + item;
     document.getElementById("career-gear").innerHTML = "Gear: " + gear;
-
 }
 
 function isItemInArray(array, item) {
@@ -56,20 +64,17 @@ function isItemInArray(array, item) {
 }
 
 document.getElementById("randomworld").addEventListener("click", function world_random() {
-    var input = random();
+    var input = random(worlds);
     homeworldtraits(input);
     base(input);
 });
 
-function random() {
-    var world = worlds[Math.floor(Math.random() * worlds.length)];
-    console.log(world[15])
-    return world;
+function random(array) {
+    var output = array[Math.floor(Math.random() * array.length)];
+    return output;
 }
 
 function base(world) {
-    var world = worlds[Math.floor(Math.random() * worlds.length)];
-    homeworldtraits(world);
     var table = document.getElementById("mytable");
     document.getElementById("world-dropdown").innerHTML='<option value="1">' + world[0] + '</option>';
     populate_dropdown(worlds, 'world-dropdown')
