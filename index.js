@@ -17,7 +17,8 @@ const careers = [
                         ['Assassin'],
                         ['Speak Language (Low Gothic) (Int), Awareness (Per), Dodge (Ag)'],
                         ['Melee Weapons Training (Primitive), Basic Weapons Training (SP), Pistol Training (SP)', 'Ambidextrous-OR-Unremarkable', 'Thrown Weapons Training-OR-Pistol Training (Las)'],
-                        ['Sword, knife, 3 doses of stimm, charge (corpse hair), black bodyglove (Common Quality Clothing)', 'Shotgun and 12 shells-OR-Hunting rifle and 16 rounds-OR-autogun and 1 clip', 'compact las pistol and 1 charge pack-OR-10 throwing knives']
+                        ['Sword, knife, 3 doses of stimm, charge (corpse hair), black bodyglove (Common Quality Clothing)', '<select name="gchoice1"><option value="Shotgun and 12 shells">autogun and 1 clip</option><option value="Hunting rifle and 16 rounds">Hunting rifle and 16 rounds</option><option value="autogun and 1 clip">autogun and 1 clip</option></select>',
+                        '<select name="gchoice1"><option value="compact las pistol and 1 charge pack">compact las pistol and 1 charge pack</option><option value="10 throwing knives">10 throwing knives</option></select>']
                     ]
                 ];
 
@@ -31,6 +32,8 @@ document.getElementById("randomcareer").addEventListener("click", function caree
     i = careers.length;
     var randomnumber = Math.floor(Math.random() * (i - 0)) + 0;
     career_display(randomnumber);
+    console.log(randomnumber)
+    createdropdowns()
 });
 
 function career_data (careers, g) {
