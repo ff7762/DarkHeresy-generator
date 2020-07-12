@@ -10,15 +10,15 @@ const careers = [
                     [
                         ['Arbitrator'],
                         ['Speak Language (Low Gothic) (Int), Literacy (Int), Common Lore (Adeptus Arbites) (Int), Common Lore (Imperium) (Int), Inquiry (Fel)'],
-                        ['Basic Weapons Training (SP), Melee Weapons Training (Primitive)', 'Quick Draw-OR-Rapid Reload'],
-                        ['shotgun and 12 shells, club, brass knuckles, knife, uniform (Good Quality Clothing), 3 doses of stimm, injector, Arbitrator ID, chrono,', 'pack of iho-sticks-OR-flask of amasec', 'chain coat-OR-flask vest-OR-meshvest']
+                        ['Basic Weapons Training (SP), Melee Weapons Training (Primitive)', '<select name="gchoice2"><option value="Quick Draw">Quick draw</option><option value="Rapid reload">Rapid reload</option></select>'],
+                        ['shotgun and 12 shells, club, brass knuckles, knife, uniform (Good Quality Clothing), 3 doses of stimm, injector, Arbitrator ID, chrono,', '<select name="gchoice1"><option value="Pack of Iho sticks">Pack of iho sticks</option><option value="Flas of amasec">Flask of amasec</option></select>', '<select name="gchoice2"><option value="Chain coat">Chain coat</option><option value="Flack vest">Flak vest</option><option value="Mesh vest">Mesh vest</option></select>']
                     ],
                     [
                         ['Assassin'],
                         ['Speak Language (Low Gothic) (Int), Awareness (Per), Dodge (Ag)'],
-                        ['Melee Weapons Training (Primitive), Basic Weapons Training (SP), Pistol Training (SP)', 'Ambidextrous-OR-Unremarkable', 'Thrown Weapons Training-OR-Pistol Training (Las)'],
+                        ['Melee Weapons Training (Primitive), Basic Weapons Training (SP), Pistol Training (SP)', '<select name="gchoice1"><option value="Ambidexterous">Ambidexterous</option><option value="Unremarkable">Unremarkable</option></select>', '<select name="gchoice2"><option value="Thrown weapons training">thrown weapons training</option><option value="Pistol training (Las)">Pistol training (Las)</option></select>'],
                         ['Sword, knife, 3 doses of stimm, charge (corpse hair), black bodyglove (Common Quality Clothing)', '<select name="gchoice1"><option value="Shotgun and 12 shells">autogun and 1 clip</option><option value="Hunting rifle and 16 rounds">Hunting rifle and 16 rounds</option><option value="autogun and 1 clip">autogun and 1 clip</option></select>',
-                        '<select name="gchoice1"><option value="compact las pistol and 1 charge pack">compact las pistol and 1 charge pack</option><option value="10 throwing knives">10 throwing knives</option></select>']
+                        '<select name="gchoice2"><option value="compact las pistol and 1 charge pack">compact las pistol and 1 charge pack</option><option value="10 throwing knives">10 throwing knives</option></select>']
                     ]
                 ];
 
