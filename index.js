@@ -24,20 +24,23 @@ const careers = [
 document.getElementById("career-dropdown").addEventListener("change", function career_select() {
     var g = this.options[this.selectedIndex].text;
     career_data(careers, g);
+    console.log(g)
 });
 
 function career_data (careers, g) {
-    for(var i = 1; i < 4; i++) {
-        var item = careers[0][i];
-        console.log(item);
-        console.log("this is: " + item);
-        document.getElementById("career-skills").innerHTML = "Skills: " + item;
-        // TODO: Loop over html elements changing InnerHTML of each section with relevent data.
-        /*
-        document.getElementById("career-talents").innerHTML = "Talents: " + item;
-        document.getElementById("career-gear").innerHTML = "Gear: " + item;
-        */
+    for(var i = 0; i <careers.length; i++) {
+        var potentialmatch = careers[i][0]
+        console.log(potentialmatch);
+        if (potentialmatch == g) {
+            var data = i;
+        }
     }
+    var skill = careers[data][1];
+    var item = careers[data][2];
+    var gear = careers[data][3];
+    document.getElementById("career-skills").innerHTML = "Skills: " + skill;
+    document.getElementById("career-talents").innerHTML = "Talents: " + item;
+    document.getElementById("career-gear").innerHTML = "Gear: " + gear;
 
 }
 
