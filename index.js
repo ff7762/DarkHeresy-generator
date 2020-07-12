@@ -7,19 +7,19 @@ const worlds = [
                ];
 
 const careers = [
-                    [
-                        ['Arbitrator'],
-                        ['Speak Language (Low Gothic) (Int), Literacy (Int), Common Lore (Adeptus Arbites) (Int), Common Lore (Imperium) (Int), Inquiry (Fel)'],
-                        ['Basic Weapons Training (SP), Melee Weapons Training (Primitive)', '<select name="gchoice2"><option value="Quick Draw">Quick draw</option><option value="Rapid reload">Rapid reload</option></select>'],
-                        ['shotgun and 12 shells, club, brass knuckles, knife, uniform (Good Quality Clothing), 3 doses of stimm, injector, Arbitrator ID, chrono,', '<select name="gchoice1"><option value="Pack of Iho sticks">Pack of iho sticks</option><option value="Flas of amasec">Flask of amasec</option></select>', '<select name="gchoice2"><option value="Chain coat">Chain coat</option><option value="Flack vest">Flak vest</option><option value="Mesh vest">Mesh vest</option></select>']
-                    ],
-                    [
-                        ['Assassin'],
-                        ['Speak Language (Low Gothic) (Int), Awareness (Per), Dodge (Ag)'],
-                        ['Melee Weapons Training (Primitive), Basic Weapons Training (SP), Pistol Training (SP)', '<select name="gchoice1"><option value="Ambidexterous">Ambidexterous</option><option value="Unremarkable">Unremarkable</option></select>', '<select name="gchoice2"><option value="Thrown weapons training">thrown weapons training</option><option value="Pistol training (Las)">Pistol training (Las)</option></select>'],
-                        ['Sword, knife, 3 doses of stimm, charge (corpse hair), black bodyglove (Common Quality Clothing)', '<select name="gchoice1"><option value="Shotgun and 12 shells">autogun and 1 clip</option><option value="Hunting rifle and 16 rounds">Hunting rifle and 16 rounds</option><option value="autogun and 1 clip">autogun and 1 clip</option></select>',
-                        '<select name="gchoice2"><option value="compact las pistol and 1 charge pack">compact las pistol and 1 charge pack</option><option value="10 throwing knives">10 throwing knives</option></select>']
-                    ]
+                   [
+                       ['Arbitrator'],
+                       ['Speak Language (Low Gothic) (Int), Literacy (Int), Common Lore (Adeptus Arbites) (Int), Common Lore (Imperium) (Int), Inquiry (Fel)'],
+                       ['Basic Weapons Training (SP), Melee Weapons Training (Primitive)', '<select name="gchoice2"><option value="Quick Draw">Quick draw</option><option value="Rapid reload">Rapid reload</option></select>'],
+                       ['shotgun and 12 shells, club, brass knuckles, knife, uniform (Good Quality Clothing), 3 doses of stimm, injector, Arbitrator ID, chrono,', '<select name="gchoice1"><option value="Pack of Iho sticks">Pack of iho sticks</option><option value="Flas of amasec">Flask of amasec</option></select>', '<select name="gchoice2"><option value="Chain coat">Chain coat</option><option value="Flack vest">Flak vest</option><option value="Mesh vest">Mesh vest</option></select>']
+                   ],
+                   [
+                       ['Assassin'],
+                       ['Speak Language (Low Gothic) (Int), Awareness (Per), Dodge (Ag)'],
+                       ['Melee Weapons Training (Primitive), Basic Weapons Training (SP), Pistol Training (SP)', '<select name="gchoice1"><option value="Ambidexterous">Ambidexterous</option><option value="Unremarkable">Unremarkable</option></select>', '<select name="gchoice2"><option value="Thrown weapons training">thrown weapons training</option><option value="Pistol training (Las)">Pistol training (Las)</option></select>'],
+                       ['Sword, knife, 3 doses of stimm, charge (corpse hair), black bodyglove (Common Quality Clothing)', '<select name="gchoice1"><option value="Shotgun and 12 shells">autogun and 1 clip</option><option value="Hunting rifle and 16 rounds">Hunting rifle and 16 rounds</option><option value="autogun and 1 clip">autogun and 1 clip</option></select>',
+                       '<select name="gchoice2"><option value="compact las pistol and 1 charge pack">compact las pistol and 1 charge pack</option><option value="10 throwing knives">10 throwing knives</option></select>']
+                   ]
                 ];
 
 document.getElementById("career-dropdown").addEventListener("change", function career_select() {
@@ -32,8 +32,6 @@ document.getElementById("randomcareer").addEventListener("click", function caree
     i = careers.length;
     var randomnumber = Math.floor(Math.random() * (i - 0)) + 0;
     career_display(randomnumber);
-    console.log(randomnumber)
-    createdropdowns()
 });
 
 function career_data (careers, g) {
@@ -55,6 +53,7 @@ function career_display(data) {
     document.getElementById("career-gear").innerHTML = "Gear: " + gear;
 }
 
+
 function isItemInArray(array, item) {
     for (var i = 0; i < array.length; i++) {
         var z = 0;
@@ -67,17 +66,19 @@ function isItemInArray(array, item) {
 }
 
 document.getElementById("randomworld").addEventListener("click", function world_random() {
-    var input = random(worlds);
+    var input = random();
     homeworldtraits(input);
     base(input);
 });
 
-function random(array) {
-    var output = array[Math.floor(Math.random() * array.length)];
-    return output;
+function random() {
+    var world = worlds[Math.floor(Math.random() * worlds.length)];
+    return world;
 }
 
 function base(world) {
+    var world = worlds[Math.floor(Math.random() * worlds.length)];
+    homeworldtraits(world);
     var table = document.getElementById("mytable");
     document.getElementById("world-dropdown").innerHTML='<option value="1">' + world[0] + '</option>';
     populate_dropdown(worlds, 'world-dropdown')
