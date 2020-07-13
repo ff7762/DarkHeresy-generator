@@ -29,7 +29,7 @@ document.getElementById("career-dropdown").addEventListener("change", function c
 });
 
 document.getElementById("randomcareer").addEventListener("click", function career_select() {
-    i = careers.length;
+    array_length = careers.length;
     var randomnumber = Math.floor(Math.random() * (i - 0)) + 0;
     career_display(randomnumber);
 });
@@ -38,7 +38,7 @@ function career_data (careers, g) {
     for(var i = 0; i <careers.length; i++) {
         var potentialmatch = careers[i][0]
         if (potentialmatch == g) {
-            var data = i;
+            var match_data = i;
         }
     }
     return data
