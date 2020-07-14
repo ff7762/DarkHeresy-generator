@@ -30,7 +30,7 @@ document.getElementById("career-dropdown").addEventListener("change", function c
 
 document.getElementById("randomcareer").addEventListener("click", function career_select() {
     array_length = careers.length;
-    var randomnumber = Math.floor(Math.random() * (i - 0)) + 0;
+    var randomnumber = Math.floor(Math.random() * (array_length - 0)) + 0;
     career_display(randomnumber);
 });
 
