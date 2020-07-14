@@ -41,7 +41,7 @@ function career_data (careers, g) {
             var match_data = i;
         }
     }
-    return data
+    return match_data
 }
 
 function career_display(data) {
