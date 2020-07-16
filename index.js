@@ -22,6 +22,8 @@ const careers = [
                    ]
                 ];
 
+
+
 document.getElementById("career-dropdown").addEventListener("change", function career_select() {
     var g = this.options[this.selectedIndex].text;
     var input = career_data(careers, g);
@@ -90,6 +92,9 @@ function base(world) {
             cell += 1;
             if (cell == 4) {
                 row.cells[j].innerHTML = replace;
+                // TODO: change the input tag's value
+                /*var value = row.cells[j].children[0].value;
+                console.log(value);*/
             }
         }
     }
