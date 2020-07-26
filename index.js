@@ -22,7 +22,7 @@ const careers = [
                    ]
                 ];
 
-
+console.log('test')
 
 document.getElementById("career-dropdown").addEventListener("change", function career_select() {
     var g = this.options[this.selectedIndex].text;
@@ -92,9 +92,6 @@ function base(world) {
             cell += 1;
             if (cell == 4) {
                 row.cells[j].innerHTML = replace;
-                // TODO: change the input tag's value
-                /*var value = row.cells[j].children[0].value;
-                console.log(value);*/
             }
         }
     }
@@ -149,7 +146,10 @@ function total() {
            cell += 1;
 
            if (cell == 9) {
-               row.cells[j].innerHTML = totalcount;
+              var c = document.getElementById("wstotalcell").childNodes;
+              c[0].innerHTML = totalcount;
+
+
            }
 
            if (/^\d+$/.test(pointer) == true) {
