@@ -146,10 +146,9 @@ function total() {
            cell += 1;
 
            if (cell == 9) {
-              var c = document.getElementById("wstotalcell").childNodes;
-              c[0].innerHTML = totalcount;
-
-
+              row.cells[j].innerHTML = totalcount;
+              /*var c = document.getElementById("wstotalcell").childNodes;
+              c[0].innerHTML = totalcount;*/
            }
 
            if (/^\d+$/.test(pointer) == true) {
