@@ -147,8 +147,11 @@ function total() {
 
            if (cell == 9) {
               row.cells[j].innerHTML = totalcount;
-              /*var c = document.getElementById("wstotalcell").childNodes;
-              c[0].innerHTML = totalcount;*/
+              var addup = totalcount;
+              var c = document.getElementById("wstotalcell").childNodes;
+              c[0].value = addup;
+              c[0].innerHTML = addup;
+              /*c[0].style.backgroundColor = "yellow";*/
            }
 
            if (/^\d+$/.test(pointer) == true) {
