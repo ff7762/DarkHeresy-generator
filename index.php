@@ -2,8 +2,6 @@
 
 include('TCPDF-main/tcpdf.php');
 
-$var1 = "poop";
-
 $pdf = new TCPDF('P','mm','A4');
 
 $pdf->setPrintHeader(false);
