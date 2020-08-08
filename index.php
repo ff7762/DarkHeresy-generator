@@ -8,12 +8,17 @@ if (isset($_POST['attribute1'])) {
     $pdf = new TCPDF('P','mm','A4');
     $pdf->setPrintHeader(false);
     $pdf->setPrintFooter(false);
+    $pdf->SetMargins(0, 0, 0, true);
     $pdf->AddPage();
+    $width = $pdf->getPageWidth();
+    $height = $pdf->getPageHeight();
+    $pdf->SetAutoPageBreak(false, 0);
+    $pdf->Image('image.jpg', 0, 0, $width, $height, 'JPG', '', '', false, 200, '', false, false, 0, false, false, true);
     $html =
     "
     <style>
     div {
-    color: #fcbfff;
+    background-color: #00bfff;
     }
     </style>
 
