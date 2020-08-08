@@ -147,7 +147,7 @@ function total() {
 
            if (cell == 9) {
               row.cells[j].innerHTML = totalcount;
-              row.cells[j].innerHTML = "<input class=w-25 action=/index.php method=post value="+ totalcount +"></input>";
+              row.cells[j].innerHTML = "<input name=attribute"+ i +" class=w-25 action=/index.php method=post value="+ totalcount +"></input>";
            }
 
            if (/^\d+$/.test(pointer) == true) {
