@@ -26,9 +26,12 @@ if (isset($_POST['attribute1'])) {
     <h1 style=color:#ff11ff></h1>
     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     <hr>
+
     "
     ;
     $pdf->writeHTML($html, true, 0, true, 0);
+    $pdf->Cell(35, 5, 'Acolyte:');
+    $pdf->TextField('firstname', 50, 5);
     /*$pdf->cell(190,10,"WS: $var1",1,1,'C');*/
     $pdf->Output();
 }
