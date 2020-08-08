@@ -13,7 +13,7 @@ if (isset($_POST['attribute1'])) {
     $width = $pdf->getPageWidth();
     $height = $pdf->getPageHeight();
     $pdf->SetAutoPageBreak(false, 0);
-    $pdf->Image('image.jpg', 0, 0, $width, $height, 'JPG', '', '', false, 200, '', false, false, 0, false, false, true);
+    $pdf->Image('assets/background.jpg', 0, 0, $width, $height, 'JPG', '', '', false, 300, '', false, false, 0, false, false, true);
     $html =
     "
     <style>
