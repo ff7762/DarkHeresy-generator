@@ -2,7 +2,8 @@
 
 include('TCPDF-main/tcpdf.php');
 
-$var1 = $_POST["attribute1"];
+$attribute1 = $_POST["attribute1"];
+$attribute2 = $_POST["attribute2"];
 
 if (isset($_POST['attribute1'])) {
     $pdf = new TCPDF('P','mm','A4');
@@ -36,7 +37,9 @@ if (isset($_POST['attribute1'])) {
     $pdf->writeHTMLcell(30, 20, 15, 20, 'Home World:');
     $pdf->TextField('Home World', 50, 5);
     $pdf->writeHTMLcell(30, 20, 15, 80, 'WS:');
-    $pdf->TextField('field', 10, 5,array(),array('v'=>$var1), 35 ,80);
+    $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute1), 35 ,80);
+    $pdf->writeHTMLcell(30, 20, 15, 90, 'BS:');
+    $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute2), 35 ,90);
 
     /*$pdf->cell(190,10,"WS: $var1",1,1,'C');*/
     $pdf->Output();
