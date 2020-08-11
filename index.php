@@ -14,7 +14,7 @@ if (isset($_POST['attribute1'])) {
     $height = $pdf->getPageHeight();
     $pdf->SetAutoPageBreak(false, 0);
     $pdf->Image('assets/background.jpg', 0, 0, $width, $height, 'JPG', '', '', false, 300, '', false, false, 0, false, false, true);
-    $pdf->Image('assets/logo.png', 10, 10, 22, 40, 'PNG', '', '', false, 300, '', false, false, 0, false, false, true);
+    $pdf->Image('assets/logo.png', 0.5*$width, 10, 22, 40, 'PNG', '', '', false, 300, '', false, false, 0, false, false, true);
     $html =
     "
     <style>
@@ -27,11 +27,17 @@ if (isset($_POST['attribute1'])) {
     <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     <hr>
 
+
     "
     ;
     $pdf->writeHTML($html, true, 0, true, 0);
-    $pdf->Cell(35, 5, 'Acolyte:');
-    $pdf->TextField('firstname', 50, 5);
+    $pdf->writeHTMLcell(20, 20, 15, 10, 'Acolyte:');
+    $pdf->TextField('Character Name', 50, 5);
+    $pdf->writeHTMLcell(30, 20, 15, 20, 'Home World:');
+    $pdf->TextField('Home World', 50, 5);
+    $pdf->writeHTMLcell(30, 20, 15, 80, 'WS:');
+    $pdf->TextField('field', 10, 5,array(),array('v'=>$var1), 35 ,80);
+
     /*$pdf->cell(190,10,"WS: $var1",1,1,'C');*/
     $pdf->Output();
 }
