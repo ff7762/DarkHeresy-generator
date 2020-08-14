@@ -22,8 +22,6 @@ const careers = [
                    ]
                 ];
 
-console.log('test')
-
 document.getElementById("career-dropdown").addEventListener("change", function career_select() {
     var g = this.options[this.selectedIndex].text;
     var input = careerData(careers, g);
