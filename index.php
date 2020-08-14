@@ -54,7 +54,6 @@ if (isset($_POST['attribute1'])) {
     $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute4), 35 ,110);
     $pdf->writeHTMLcell(30, 20, 15, 120, 'AG:');
     $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute5), 35 ,120);
-
     $pdf->writeHTMLcell(30, 20, 55, 80, 'INT:');
     $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute6), 75 ,80);
     $pdf->writeHTMLcell(30, 20, 55, 90, 'PER:');
