@@ -26,17 +26,17 @@ console.log('test')
 
 document.getElementById("career-dropdown").addEventListener("change", function career_select() {
     var g = this.options[this.selectedIndex].text;
-    var input = career_data(careers, g);
-    career_display(input);
+    var input = careerData(careers, g);
+    careerDisplay(input);
 });
 
 document.getElementById("randomcareer").addEventListener("click", function career_select() {
     array_length = careers.length;
     var randomnumber = Math.floor(Math.random() * (array_length - 0)) + 0;
-    career_display(randomnumber);
+    careerDisplay(randomnumber);
 });
 
-function career_data (careers, g) {
+function careerData (careers, g) {
     for(var i = 0; i <careers.length; i++) {
         var potentialmatch = careers[i][0]
         if (potentialmatch == g) {
@@ -46,7 +46,7 @@ function career_data (careers, g) {
     return match_data
 }
 
-function career_display(data) {
+function careerDisplay(data) {
     var skill = careers[data][1];
     var item = careers[data][2];
     var gear = careers[data][3];
@@ -69,7 +69,7 @@ function isItemInArray(array, item) {
 
 document.getElementById("randomworld").addEventListener("click", function world_random() {
     var input = random();
-    homeworldtraits(input);
+    homeWorldTraits(input);
     base(input);
 });
 
@@ -79,11 +79,10 @@ function random() {
 }
 
 function base(world) {
-    var world = worlds[Math.floor(Math.random() * worlds.length)];
-    homeworldtraits(world);
+    homeWorldTraits(world);
     var table = document.getElementById("mytable");
-    document.getElementById("world-dropdown").innerHTML='<option value="1">' + world[0] + '</option>';
-    populate_dropdown(worlds, 'world-dropdown')
+    document.getElementById("world-dropdown").innerHTML='<option value="0">' + world[0] + '</option>';
+    PopulateDropdown(worlds, 'world-dropdown')
     for (var i = 1, row; row = table.rows[i]; i++) {
         var cell = 0;
         var replace = world[i];
@@ -98,25 +97,34 @@ function base(world) {
     total();
 }
 
-function homeworldtraits(world) {
+function homeWorldTraits(world) {
     document.getElementById("traits").innerHTML = "Homeworld Traits: "+ world[15];
     document.getElementById("skills").innerHTML = "Homeworld Skills: "+ world[16];
     document.getElementById("talents").innerHTML = "Homeworld Talents: "+ world[17];
 }
 
-function getworld_dropdown() {
+function worldTypeToData() {
+    var input = getWordDropDown()
+    var world = '';
+    for (var i = 0; i < worlds.length; i++) {
+        if (input == worlds[i][0]) {
+            var world = worlds[i];
+        }
+    }
+    return world
+}
+
+function getWordDropDown() {
     var select = document.getElementById("world-dropdown");
-    var currentOption = select.options[select.selectedIndex].value;
-    return(currentOption);
+    return select.options[select.selectedIndex].value;
 };
 
 document.getElementById("world-dropdown").addEventListener("change", function world_select() {
-    var input = getworld_dropdown();
-    var world_object = isItemInArray(worlds, input);
-    base(world_object);
+    var input = worldTypeToData();
+    base(input);
 });
 
-function populate_dropdown(array, element) {
+function PopulateDropdown(array, element) {
     var select = document.getElementById(element);
     for(var i = 0; i < array.length; i++) {
         var option = array[i][0];
@@ -159,5 +167,5 @@ function total() {
 
 document.getElementById("rerollButton").addEventListener("click", rollStats);
 document.getElementById("rerollButton").addEventListener("click", total);
-window.onload = populate_dropdown(worlds, 'world-dropdown');
-window.onload = populate_dropdown(careers, 'career-dropdown');
+window.onload = PopulateDropdown(worlds, 'world-dropdown');
+window.onload = PopulateDropdown(careers, 'career-dropdown');
