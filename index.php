@@ -11,6 +11,8 @@ $attribute6 = $_POST["attribute6"];
 $attribute7 = $_POST["attribute7"];
 $attribute8 = $_POST["attribute8"];
 $attribute9 = $_POST["attribute9"];
+$attribute10 = $_POST["attribute10"];
+$attribute11 = $_POST["attribute11"];
 
 
 if (isset($_POST['attribute1'])) {
@@ -62,6 +64,10 @@ if (isset($_POST['attribute1'])) {
     $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute8), 75 ,100);
     $pdf->writeHTMLcell(30, 20, 55, 110, 'FE:');
     $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute9), 75 ,110);
+    $pdf->writeHTMLcell(30, 20, 55, 120, 'Wounds:');
+    $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute10), 75 ,120);
+    $pdf->writeHTMLcell(30, 20, 50, 130, 'Fate points');
+    $pdf->TextField('field', 10, 5,array(),array('v'=>$attribute11), 75 ,130);
 
 
 
