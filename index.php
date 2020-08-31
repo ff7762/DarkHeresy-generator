@@ -13,7 +13,7 @@ $attribute8 = $_POST["attribute8"];
 $attribute9 = $_POST["attribute9"];
 $attribute10 = $_POST["attribute10"];
 $attribute11 = $_POST["attribute11"];
-
+$name = $_POST["name"];
 
 if (isset($_POST['attribute1'])) {
     $pdf = new TCPDF('P','mm','A4');
@@ -43,7 +43,7 @@ if (isset($_POST['attribute1'])) {
     ;
     $pdf->writeHTML($html, true, 0, true, 0);
     $pdf->writeHTMLcell(20, 20, 15, 10, 'Acolyte:');
-    $pdf->TextField('Character Name', 50, 5);
+    $pdf->TextField('Character Name', 40, 5,array(),array('v'=>$name), 35 , 10);
     $pdf->writeHTMLcell(30, 20, 15, 20, 'Home World:');
     $pdf->TextField('Home World', 50, 5);
     $pdf->writeHTMLcell(30, 20, 15, 80, 'WS:');
